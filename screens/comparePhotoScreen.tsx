@@ -62,10 +62,7 @@ const ComparePhotoScreen = () => {
         <View style={styles.imgView}>
           <Animated.Image
             source={{uri: image}}
-            style={[
-              {height: IMAGE_HEIGHT, resizeMode: 'cover', flex: 1},
-              leftImage,
-            ]}
+            style={[styles.imageStyle, {height: IMAGE_HEIGHT}, leftImage]}
           />
           <PanGestureHandler onGestureEvent={gestureHandler}>
             <Animated.View
@@ -83,10 +80,7 @@ const ComparePhotoScreen = () => {
           </PanGestureHandler>
           <Animated.Image
             source={{uri: secondImage}}
-            style={[
-              {height: IMAGE_HEIGHT, resizeMode: 'cover', flex: 1},
-              rightImage,
-            ]}
+            style={[{height: IMAGE_HEIGHT}, styles.imageStyle, rightImage]}
           />
         </View>
       </View>
@@ -128,6 +122,10 @@ const styles = StyleSheet.create({
     zIndex: 9999,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  imageStyle: {
+    resizeMode: 'cover',
+    flex: 1,
   },
 });
 

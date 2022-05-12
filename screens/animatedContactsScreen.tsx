@@ -109,13 +109,14 @@ const AnimatedContactsScreen: React.FunctionComponent = () => {
   const renderItem = ({item}: {item: PersonItem}) => {
     return (
       <View
-        style={{
-          width: ITEM_SIZE,
-          height: ITEM_SIZE,
-          backgroundColor: item.backgroundColor,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+        style={[
+          styles.itemStyle,
+          {
+            width: ITEM_SIZE,
+            height: ITEM_SIZE,
+            backgroundColor: item.backgroundColor,
+          },
+        ]}>
         {item.hasAvatar ? (
           <Image source={{uri: item.avatar}} style={styles.image} />
         ) : (
@@ -139,15 +140,18 @@ const AnimatedContactsScreen: React.FunctionComponent = () => {
           }
           style={[
             StyleSheet.absoluteFillObject,
-            {justifyContent: 'flex-end', padding: SPACING},
+            styles.nameContainer,
+            {padding: SPACING},
           ]}>
           <Text
             numberOfLines={1}
             adjustsFontSizeToFit
-            style={{
-              color: item.hasAvatar ? Colors.WHITE : item.text,
-              fontWeight: '600',
-            }}>
+            style={[
+              styles.textName,
+              {
+                color: item.hasAvatar ? Colors.WHITE : item.text,
+              },
+            ]}>
             {item.firstName} {item.lastName}
           </Text>
         </LinearGradient>
@@ -237,6 +241,16 @@ const styles = StyleSheet.create({
     fontSize: 94,
     fontWeight: 'bold',
     opacity: 0.1,
+  },
+  itemStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  nameContainer: {
+    justifyContent: 'flex-end',
+  },
+  textName: {
+    fontWeight: '600',
   },
 });
 
