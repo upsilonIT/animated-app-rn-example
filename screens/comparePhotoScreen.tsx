@@ -69,6 +69,7 @@ const ComparePhotoScreen = () => {
           />
           <PanGestureHandler onGestureEvent={gestureHandler}>
             <Animated.View
+              collapsable={false}
               style={[
                 styles.animatedContainer,
                 {
