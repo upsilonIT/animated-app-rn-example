@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
@@ -6,6 +8,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import {Colors} from './colors';
 import AnimatedContactsScreen from './screens/animatedContactsScreen';
+import ComparePhotoScreen from './screens/comparePhotoScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,13 +27,14 @@ const App = () => {
 
               if (route.name === 'Contacts') {
                 iconName = 'contacts';
-              } else if (route.name === 'Settings') {
-                iconName = 'contacts';
+              } else if (route.name === 'Compare') {
+                iconName = 'instagram';
               }
               return <Icon name={iconName} size={size} color={color} />;
             },
           })}>
           <Tab.Screen component={AnimatedContactsScreen} name={'Contacts'} />
+          <Tab.Screen component={ComparePhotoScreen} name={'Compare'} />
         </Tab.Navigator>
       </SafeAreaView>
     </NavigationContainer>
