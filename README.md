@@ -2,6 +2,8 @@
 - Animated List Of Contacts
 - Animated Feature For Comparing Photos
 
+This code was built by Upsilon for a [guide](https://www.upsilonit.com/blog/react-native-animation-tutorial-creating-animations-with-reanimated) on creating animations in React Native
+
 ## Installation
 Install **[Node.js](https://nodejs.org/en/)**
 
